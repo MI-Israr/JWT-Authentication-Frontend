@@ -2,7 +2,7 @@ import { useState } from "react";
 import ShowPass from "../assets/show.png";
 import HidePass from "../assets/invisible.png";
 
-const PasswordInput = ({ name, value, onChange, error }) => {
+const PasswordInput = ({ name, value, placeholder, onChange, error }) => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
@@ -11,7 +11,7 @@ const PasswordInput = ({ name, value, onChange, error }) => {
         <input
           name={name}
           type={showPassword ? "text" : "password"}
-          placeholder="Password"
+          placeholder={placeholder}
           value={value}
           onChange={onChange}
         />

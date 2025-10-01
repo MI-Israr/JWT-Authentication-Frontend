@@ -32,7 +32,7 @@ const Signup = () => {
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));
 
-      setMessage("✅ Signup successful!");
+      setMessage("Signup successful!");
       navigate("/home");
     } catch (err) {
       if (err.name === "ValidationError") {
@@ -53,6 +53,7 @@ const Signup = () => {
         <PasswordInput
           name="password"
           value={form.password}
+          placeholder="Password"
           onChange={handleChange}
           error={errors.password}
         />

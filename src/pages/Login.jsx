@@ -63,7 +63,7 @@
 
 // export default Login;
 import { useState } from "react";
-import { login } from "../api/auth";
+import { forgotPassword, login } from "../api/auth";
 import { useNavigate } from "react-router-dom";
 import InputField from "../components/InputField";
 import PasswordInput from "../components/PasswordInput";
@@ -94,7 +94,7 @@ const Login = ({ setIsAuth }) => {
       localStorage.setItem("user", JSON.stringify(res.data.user));
 
       setIsError(false);
-      setMessage("✅ Login successful!");
+      setMessage("Login successful!");
       setIsAuth(true);
       navigate("/home");
     } catch (err) {
@@ -106,6 +106,23 @@ const Login = ({ setIsAuth }) => {
         setIsError(true);
         setMessage("❌ " + (err.response?.data?.error || err.message));
       }
+    }
+  };
+
+  const handleForgotPassword = async () => {
+    if (!form.email) {
+      setMessage("❌ Please enter your email first.");
+      setIsError(true);
+      return;
+    }
+
+    try {
+      const res = await forgotPassword(form.email);
+      setMessage("✅ " + res.data.message);
+      setIsError(false);
+    } catch (err) {
+      setMessage("❌ " + (err.response?.data?.error || "Something went wrong"));
+      setIsError(true);
     }
   };
 
@@ -125,10 +142,13 @@ const Login = ({ setIsAuth }) => {
         <PasswordInput
           name="password"
           value={form.password}
+          placeholder="Password"
           onChange={handleChange}
           error={errors.password}
         />
-        <p className="forget-pass">forget password</p>
+        <p className="forgot-link" onClick={handleForgotPassword}>
+          Forgot Password?
+        </p>
         <button type="submit">Login</button>
         <RouteLink to="signup" text="Don’t have an account" />
       </form>
