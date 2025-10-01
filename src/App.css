@@ -1,0 +1,220 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-image: url("/src//assets/bg.jpg");
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ------------------------- Container-------------------------  */
+.auth-container {
+  background: #fff;
+  padding: 2rem;
+  width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+/* ------------------------ Heading----------------------------  */
+.auth-container h2 {
+  margin-bottom: 1.5rem;
+  color: #d24501;
+}
+
+/*------------------------Input fields--------------------- */
+.auth-form input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.auth-form input:focus {
+  border-color: #d24501;
+}
+
+/* ------------------------- Button------------------------  */
+.auth-form button,
+.logout-btn {
+  background: #d24501;
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s ease-in-out;
+}
+
+.auth-form button:hover,
+.logout-btn:hover {
+  background: #d24501;
+}
+
+/* ------------------------- Message---------------------------  */
+.message {
+  margin-top: 15px;
+  font-size: 14px;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.message.success {
+  background: #e7f7ee;
+  color: #2e7d32;
+}
+
+.message.error {
+  background: #fdecea;
+  color: #c62828;
+}
+
+.user-card {
+  margin: 20px 0;
+  padding: 15px;
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  text-align: left;
+}
+.user-card p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.link {
+  color: #d24501;
+}
+.route {
+  margin-top: 10px;
+}
+
+.password-field {
+  position: relative;
+  width: 100%;
+}
+
+.password-field input {
+  width: 100%;
+  padding: 12px;
+  padding-right: 40px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  top: 55%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  user-select: none;
+  font-size: 18px;
+}
+
+.eye-icon img {
+  width: 17px;
+}
+
+/* ------------------------- Home---------------------------  */
+/* .auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #f4f6f9;
+  padding: 20px;
+} */
+
+.welcome-text {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.user-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.user-card:hover {
+  transform: translateY(-5px);
+}
+
+.profile-pic {
+  margin-bottom: 15px;
+}
+
+.profile-pic img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #4caf50;
+}
+
+.user-info p {
+  margin: 8px 0;
+  font-size: 15px;
+  color: #444;
+}
+
+.logout-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #ff4d4d;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.logout-btn:hover {
+  background: #e63e3e;
+}
+
+.error {
+  color: #ff4d4f;
+  font-size: 0.9rem;
+  margin-top: 2px;
+}
+
+.success {
+  color: #28a745;
+  font-size: 0.95rem;
+}
+
+.message {
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.forget-pass {
+  text-align: right;
+  color: #ff4d4f;
+  cursor: pointer;
+}
