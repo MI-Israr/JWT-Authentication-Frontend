@@ -17,7 +17,6 @@ const ResetPassword = () => {
       setMessage("✅ " + res.data.message);
       setIsError(false);
 
-      // 🔹 Show popup and redirect
       setTimeout(() => {
         alert("Password reset successfully ✅");
         navigate("/login");
